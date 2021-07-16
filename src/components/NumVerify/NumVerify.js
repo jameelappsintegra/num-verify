@@ -14,10 +14,19 @@ const NumVerify = (props) => {
         setData(data);
       });
   }, []);
+  console.log(data);
   if (data) {
     return (
       <>
         <h1>{data.number}</h1>
+        <p>{data.carrier}</p>
+        <p>{data.country_code}</p>
+        <p>{data.country_name}</p>
+        <p>{data.country_prefix}</p>
+        <p>{data.international_format}</p>
+        <p>{data.local_format}</p>
+        <p>{data.line_type}</p>
+        <p>{data.location}</p>
       </>
     );
   } else {

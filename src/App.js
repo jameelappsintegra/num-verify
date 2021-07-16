@@ -12,10 +12,10 @@ function App() {
   };
 
   return (
-    <>
-      <NumVerify number={14158586273} />
+    <div className="container">
+      <NumVerify number={9629729742} />
       <InputFiels onChangeName={(e) => changeName(e.target.value)} />
-    </>
+    </div>
   );
 }
 
