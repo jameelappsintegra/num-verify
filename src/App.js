@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [number, setnumber] = useState(null);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -12,20 +12,18 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-        console.log(data.country_code);
-      })
-      .then((data) => setnumber(data));
+        setData(data);
+      });
   }, []);
-
-  return (
-    <div className="App">
-      <div className="card text-center m-3">
-        <h5 className="card-header">Simple GET Request</h5>
-        <div className="card-body">Total react packages: {number}</div>
-      </div>
-    </div>
-  );
+  if (data) {
+    return (
+      <>
+        <h1>{data.number}</h1>;
+      </>
+    );
+  } else {
+    return <h1>Data is Loading...</h1>;
+  }
 }
 
 export default App;
