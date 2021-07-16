@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+import React,{useEffect} from 'react'
 import './App.css';
 
-function App() {
+ function App() {
+  useEffect(() => {
+    fetch('http://apilayer.net/api/validate?access_key=3eece2042c90e054c219c77fd5453008&number=14158586273&country_code=IN&format=1')
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    console.log(data);
+  });
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="card text-center m-3">
+                <h5 className="card-header">Simple GET Request</h5>
+                <div className="card-body">
+                </div>
+            </div>
     </div>
   );
 }
