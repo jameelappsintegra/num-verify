@@ -9,6 +9,7 @@ const InputFiels = (props) => {
         value={props.name}
         onChange={props.onChangeName}
       />
+      <button onClick={props.Check}>Check</button>
     </div>
   );
 };
